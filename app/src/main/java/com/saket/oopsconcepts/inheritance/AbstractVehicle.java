@@ -18,11 +18,13 @@ package com.saket.oopsconcepts.inheritance;
  * implement the interface.
  *
  * Below AbstractVehicle implements IVehicle interface. And since IVehicle extends
- * IGearBox and IEngine, so indrectly implements from those interfaces as well.
+ * IGearBox and IEngine, so indirectly implements from those interfaces as well.
  * But since its abstract, it does not have to implement any methods from IVehicle.
  * instead, it adds its own properties and methods on top of it.
+ *
+ * Class can implement one or more interface as seen here with Dummy interface.
  */
-public abstract class AbstractVehicle implements IVehicle {
+public abstract class AbstractVehicle implements IVehicle, IDummy {
 
     private int noOfWheels;
     private int noOfDoors;
