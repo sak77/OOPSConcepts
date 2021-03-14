@@ -2,7 +2,7 @@ package com.saket.oopsconcepts.inheritance;
 
 
 /**
- * Here Car class extends Vehicle class.
+ * Here Car class extends AbstractVehicle class.
  * <p>
  * A class can extend another class or an abstract class. But it can only extend
  * one other class. It cannot extend more than one class. But it can implement more than one
@@ -15,7 +15,7 @@ package com.saket.oopsconcepts.inheritance;
  * Only difference is, if abstract class has abstract methods, then the subclass
  * must implement them.
  */
-public class Car extends Vehicle {
+public class Car extends AbstractVehicle {
 
     @Override
     public int getNoOfWheels() {
@@ -28,7 +28,7 @@ public class Car extends Vehicle {
     }
 
     @Override
-    public Vehicle.EngineType getVehicleEngineType() {
+    public AbstractVehicle.EngineType getVehicleEngineType() {
         return EngineType.HYBRID;
     }
 
@@ -62,5 +62,17 @@ public class Car extends Vehicle {
     //Car can have its own methods as well..
     public boolean isInsured() {
         return true;
+    }
+
+    @Override
+    public GEARBOX_TYPE getGearBoxType() {
+        //Our car has automatice transmission
+        return GEARBOX_TYPE.AUTOMATIC;
+    }
+
+    @Override
+    public GEARBOX_PLACEMENT getGearBoxPlacement() {
+        //Our car has paddle-shift
+        return GEARBOX_PLACEMENT.PADDLE_SHIFT;
     }
 }

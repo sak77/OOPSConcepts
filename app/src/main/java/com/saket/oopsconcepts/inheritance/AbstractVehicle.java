@@ -16,23 +16,27 @@ package com.saket.oopsconcepts.inheritance;
  * then that class must also be declared as an abstract class. Any sub-class of such
  * abstract class must implement remaining interface method and can be said to
  * implement the interface.
+ *
+ * Below AbstractVehicle implements IVehicle interface. And since IVehicle extends
+ * IGearBox and IEngine, so indrectly implements from those interfaces as well.
+ * But since its abstract, it does not have to implement any methods from IVehicle.
+ * instead, it adds its own properties and methods on top of it.
  */
-public abstract class Vehicle implements IMotor {
+public abstract class AbstractVehicle implements IVehicle {
 
     private int noOfWheels;
     private int noOfDoors;
-    public enum EngineType {
-        ELECTRIC, COMBUSTION, HYBRID
-    }
     private EngineType vehicleEngineType;
     private int mileage;
 
-    protected boolean isEngineOn = false;
     protected enum Gear {
         PARK, DRIVE, REVERSE
     }
     protected Gear currentGear;
 
+    boolean isEngineOn = false;
+
+    //subclass must override abstract methods
     public abstract int getNoOfWheels();
 
     public abstract int getNoOfDoors();
@@ -57,7 +61,4 @@ public abstract class Vehicle implements IMotor {
         currentGear = Gear.PARK;
     }
 */
-
-    //subclass must override abstract methods
-    public abstract void drive();
 }

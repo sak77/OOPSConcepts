@@ -10,7 +10,7 @@ import com.saket.oopsconcepts.abstraction.Triangle;
 import com.saket.oopsconcepts.abstraction.Shape;
 import com.saket.oopsconcepts.encapsulation.Fruit;
 import com.saket.oopsconcepts.inheritance.Car;
-import com.saket.oopsconcepts.inheritance.Vehicle;
+import com.saket.oopsconcepts.inheritance.AbstractVehicle;
 import com.saket.oopsconcepts.inheritance.VolvoCar;
 
 /**
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private void testInheritance() {
         //Since abstract class cannot be instantiated
         // we create instance of superclass vehicle using its subclass Car.
-        Vehicle myCar = new Car();
+        AbstractVehicle myCar = new Car();
         //So a super class can be instantiated using instance of its subclass
         //But reverse is not true, so although VolvoCar extends Car,
         //we cannot create instance of VolvoCar from Car instance.

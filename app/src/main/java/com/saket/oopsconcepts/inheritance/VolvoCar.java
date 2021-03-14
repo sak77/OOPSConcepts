@@ -4,6 +4,9 @@ package com.saket.oopsconcepts.inheritance;
  * This is example of class that extends a non-abstract class.
  *
  * Here the subclass is not required to implement any method from the superclass.
+ *
+ * Also note that a class can only extend from a single superclass. Not more than that.
+ * Otherwise i get an error - class cannot extend multiple classes.
  */
 public class VolvoCar extends Car {
 
