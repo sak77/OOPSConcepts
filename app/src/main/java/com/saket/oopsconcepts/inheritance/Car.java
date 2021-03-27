@@ -1,6 +1,8 @@
 package com.saket.oopsconcepts.inheritance;
 
 
+import java.util.Objects;
+
 /**
  * Here Car class extends AbstractVehicle class.
  * <p>
@@ -16,6 +18,8 @@ package com.saket.oopsconcepts.inheritance;
  * must implement them.
  */
 public class Car extends AbstractVehicle {
+
+    private String modelName;
 
     @Override
     public int getNoOfWheels() {
@@ -48,7 +52,7 @@ public class Car extends AbstractVehicle {
             System.out.println("Driving..");
         } else {
             System.out.println("Start engine first");
-            //startEngine();
+            startEngine();
             drive();
         }
     }
@@ -74,5 +78,26 @@ public class Car extends AbstractVehicle {
     public GEARBOX_PLACEMENT getGearBoxPlacement() {
         //Our car has paddle-shift
         return GEARBOX_PLACEMENT.PADDLE_SHIFT;
+    }
+
+    public String getModelName() {
+        return modelName;
+    }
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Objects.equals(modelName, car.modelName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(modelName);
     }
 }

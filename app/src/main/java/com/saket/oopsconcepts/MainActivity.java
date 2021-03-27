@@ -23,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //testAbstraction();
-        testEncapsulation();
+        //testEncapsulation();
+        testInheritance();
     }
 
     private void testAbstraction() {
@@ -46,11 +47,15 @@ public class MainActivity extends AppCompatActivity {
         //Since abstract class cannot be instantiated
         // we create instance of superclass vehicle using its subclass Car.
         AbstractVehicle myCar = new Car();
+
+        myCar.drive();
+
         //So a super class can be instantiated using instance of its subclass
         //But reverse is not true, so although VolvoCar extends Car,
         //we cannot create instance of VolvoCar from Car instance.
         //VolvoCar volvoCar = new Car();
         VolvoCar volvoCar = new VolvoCar();
+        volvoCar.drive();
 
         //However, in such a scenario the super class can only invoke its own methods,
         // and not methods of the sub-class.....
